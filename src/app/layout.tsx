@@ -9,9 +9,9 @@ const roboto = Roboto_Flex({
 });
 
 export const metadata: Metadata = {
-  title: 'Wordle Clone',
+  title: 'Wordle Unblocked - Unlimited',
   description:
-    'Clone of the well-known word game called Wordle. This version has been developed using Next.js, Redux Toolkit, Material UI, and Sass.',
+    'Play Wordle unblocked for free! Enjoy the popular word puzzle game without restrictions. Guess the 5-letter word in 6 tries. No downloads, no sign-ups required.',
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
