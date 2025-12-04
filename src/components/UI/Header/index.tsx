@@ -21,7 +21,7 @@ export const Header = () => {
       <IconButton aria-label='Help' onClick={handleToggleInstructions}>
         <Help className={styles.header__icon} />
       </IconButton>
-      <h1 className={styles.header__title}>Wordle H5</h1>
+      <h1 className={styles.header__title}>Wordle Unblocked</h1>
       <IconButton aria-label='Restart' onClick={() => resetGame()}>
         <RestartAlt className={styles.header__icon} />
       </IconButton>
