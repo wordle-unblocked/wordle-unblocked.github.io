@@ -16,8 +16,8 @@ export const metadata: Metadata = {
     title: 'Wordle Unblocked - Play Free Online',
     description: 'Play Wordle without restrictions! Free word puzzle game available everywhere.',
     type: 'website',
-    url: 'https://yourwebsite.com', // ← Replace with your actual URL
-    images: ['/wordle-og-image.jpg'], // ← Add your OG image
+    url: 'https://wordle-unblocked.github.io/',
+    images: ['/wordle-og-image.jpg'], 
   },
 };
 
