@@ -22,13 +22,13 @@ export const metadata: Metadata = {
 };
 
 // Wordle Game Schema Markup
-const wordleSchema = {
+const wordleSchema = {  
   "@context": "https://schema.org",
   "@type": "VideoGame",
   "name": "Wordle Unblocked",
   "alternateName": "Wordle Unlimited Free",
   "description": "Play Wordle unblocked for free & Unlimited without any restrictions. Guess the 5-letter word in 6 tries with daily puzzles and unlimited gameplay.",
-  "url": "https://wordle-unblocked.github.io/", 
+  "url": "https://wordle-unblocked.github.io/",
   "applicationCategory": "PuzzleGame",
   "gamePlatform": "Web Browser",
   "genre": ["Word Game", "Puzzle", "Educational", "Brain Game"],
@@ -36,7 +36,7 @@ const wordleSchema = {
   "operatingSystem": "Web",
   "author": {
     "@type": "Organization",
-    "name": "Wordle Unblocked" 
+    "name": "Wordle Unblocked"
   },
   "offers": {
     "@type": "Offer",
@@ -57,13 +57,12 @@ const wordleSchema = {
     "ratingCount": "1500",
     "bestRating": "5",
     "worstRating": "1"
-  }
-  ],
+  },
   "softwareRequirements": "Web browser with JavaScript enabled",
   "educationalUse": "Vocabulary building, spelling practice, cognitive training",
   "learningResourceType": "Game",
   "typicalAgeRange": "8-99",
-  "timeRequired": "PT3M", // 3 minutes per game
+  "timeRequired": "PT3M",
   "interactivityType": "active",
   "isAccessibleForFree": true,
   "featureList": [
@@ -74,6 +73,7 @@ const wordleSchema = {
     "Statistics tracking",
     "Mobile-friendly design"
   ]
+}
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
