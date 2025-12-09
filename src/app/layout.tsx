@@ -71,8 +71,7 @@ const wordleSchema = {
     "Daily challenge mode",
     "Color-coded feedback system",
     "Statistics tracking",
-    "Mobile-friendly design"
-  ]
+    "Mobile-friendly design"  
 }
 };
 
