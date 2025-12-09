@@ -50,14 +50,7 @@ const wordleSchema = {
     "@type": "PeopleAudience",
     "suggestedMinAge": "8",
     "suggestedMaxAge": "99"
-  },
-  "aggregateRating": {
-    "@type": "AggregateRating",
-    "ratingValue": "4.8",
-    "ratingCount": "1500",
-    "bestRating": "5",
-    "worstRating": "1"
-  },
+  },  
   "softwareRequirements": "Web browser with JavaScript enabled",
   "educationalUse": "Vocabulary building, spelling practice, cognitive training",
   "learningResourceType": "Game",
@@ -71,8 +64,8 @@ const wordleSchema = {
     "Daily challenge mode",
     "Color-coded feedback system",
     "Statistics tracking",
-    "Mobile-friendly design"  
-}
+    "Mobile-friendly design"
+  ]
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
