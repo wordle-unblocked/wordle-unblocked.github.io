@@ -57,36 +57,7 @@ const wordleSchema = {
     "ratingCount": "1500",
     "bestRating": "5",
     "worstRating": "1"
-  },
-  "review": [
-    {
-      "@type": "Review",
-      "author": {
-        "@type": "Person",
-        "name": "Alex Turner"
-      },
-      "datePublished": "2025-12-01",
-      "reviewBody": "Best unblocked Wordle version! Works perfectly at school and work.",
-      "reviewRating": {
-        "@type": "Rating",
-        "ratingValue": "5",
-        "bestRating": "5"
-      }
-    },
-    {
-      "@type": "Review",
-      "author": {
-        "@type": "Person",
-        "name": "Maria Garcia"
-      },
-      "datePublished": "2025-12-02",
-      "reviewBody": "Love the unlimited play feature. No more waiting for daily puzzles!",
-      "reviewRating": {
-        "@type": "Rating",
-        "ratingValue": "4.8",
-        "bestRating": "5"
-      }
-    }
+  }
   ],
   "softwareRequirements": "Web browser with JavaScript enabled",
   "educationalUse": "Vocabulary building, spelling practice, cognitive training",
