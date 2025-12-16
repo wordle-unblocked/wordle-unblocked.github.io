@@ -3,27 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <!-- SEO Meta Tags -->
+
     <title>Wordle Unblocked - Unlimited Free Word Game</title>
     <meta name="description" content="Play Wordle Unblocked - The unlimited, free word game accessible anywhere. No daily limits, no restrictions. Play as many word puzzles as you want!">
     <meta name="keywords" content="wordle unblocked, wordle game, free wordle, unlimited wordle, word game, puzzle game, daily wordle">
     <meta name="author" content="Wordle Unblocked">
     <link rel="canonical" href="https://wordle-unblocked.github.io/">
-    
-    <!-- Open Graph Meta Tags -->
+
     <meta property="og:title" content="Wordle Unblocked - Unlimited Free Word Game">
     <meta property="og:description" content="Play Wordle Unblocked - The unlimited, free word game accessible anywhere. No daily limits, no restrictions.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://wordle-unblocked.github.io/">
     <meta property="og:site_name" content="Wordle Unblocked">
-    
-    <!-- Twitter Card Meta Tags -->
+
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Wordle Unblocked - Unlimited Free Word Game">
     <meta name="twitter:description" content="Play Wordle Unblocked - The unlimited, free word game accessible anywhere. No daily limits, no restrictions.">
-    
-    <!-- Schema.org JSON-LD -->
+
     <script type="application/ld+json">
     {
   "@context": "https://schema.org",
@@ -76,7 +72,7 @@
   ]
 }
     </script>
-    
+
     <style>
         /* Reset & Base */
         * {
@@ -155,13 +151,11 @@
 
         /* Hero Section */
         .hero {
-            padding: 4rem 2rem;
+            padding: 6rem 2rem;
             background: var(--cream);
             border-bottom: 8px solid var(--black);
-            position: relative;
-            overflow: hidden;
-            /* Added z-index to establish proper stacking context */
-            z-index: 1;
+            /* **MODIFIED:** Removed position relative to prevent section overlap and stop scroll-reveal */
+            position: static;
         }
 
         .hero-container {
@@ -176,7 +170,8 @@
             line-height: 0.9;
             margin-bottom: 2rem;
             letter-spacing: -4px;
-            animation: slideInUp 1s ease-out;
+            /* **MODIFIED:** Removed slideInUp animation to stop scroll-reveal effect */
+            /* animation: slideInUp 1s ease-out; */
         }
 
         .hero-title span {
@@ -195,15 +190,17 @@
             margin-bottom: 3rem;
             font-weight: 900;
             text-transform: uppercase;
-            animation: slideInUp 1s ease-out 0.2s backwards;
+            /* **MODIFIED:** Removed slideInUp animation delay to stop scroll-reveal effect */
+            /* animation: slideInUp 1s ease-out 0.2s backwards; */
         }
 
         .game-container {
-            border: 8px solid var(--black);
+            padding: 3rem;
             background: white;
             box-shadow: 12px 12px 0px rgba(0,0,0,0.3);
-            animation: slideInUp 1s ease-out 0.4s backwards;
-            position: relative;
+            /* **MODIFIED:** Removed slideInUp animation delay to stop scroll-reveal effect */
+            /* animation: slideInUp 1s ease-out 0.4s backwards; */
+            position: relative; /* Restored position relative for the pseudo-element to work */
         }
 
         .game-container::before {
@@ -216,6 +213,7 @@
             background: linear-gradient(45deg, var(--green), var(--yellow), var(--blue), var(--coral));
             z-index: -1;
             animation: rotateGradient 8s linear infinite;
+            pointer-events: none;
         }
 
         .game-container iframe {
@@ -237,26 +235,14 @@
         }
 
         .section-title {
-            font-size: clamp(2.5rem, 6vw, 5rem);
+            font-size: 3rem;
             font-weight: 900;
-            text-transform: uppercase;
-            margin-bottom: 3rem;
             text-align: center;
-            letter-spacing: -3px;
-            position: relative;
-            display: inline-block;
+            margin-bottom: 3rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            display: block;
             width: 100%;
-        }
-
-        .section-title::after {
-            content: '';
-            position: absolute;
-            bottom: -15px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 200px;
-            height: 8px;
-            background: var(--green);
         }
 
         .features-grid {
@@ -268,12 +254,12 @@
 
         .feature-card {
             background: white;
+            padding: 3rem;
             border: 6px solid var(--black);
-            padding: 2.5rem;
-            box-shadow: 8px 8px 0px rgba(0,0,0,0.2);
+            box-shadow: 8px 8px 0px rgba(0,0,0,0.3);
             transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
+            position: relative; /* Restored position relative for the pseudo-element to work */
+            overflow: hidden; /* Restored overflow hidden for the pseudo-element to work */
         }
 
         .feature-card::before {
@@ -356,13 +342,15 @@
             padding: 2rem;
             text-align: center;
             box-shadow: 8px 8px 0px rgba(0,0,0,0.4);
-            animation: slideInUp 0.6s ease-out backwards;
+            /* **MODIFIED:** Removed slideInUp animation to stop scroll-reveal effect */
+            /* animation: slideInUp 0.6s ease-out backwards; */
         }
 
-        .step:nth-child(1) { animation-delay: 0.1s; }
+        /* **MODIFIED:** Removed animation delays for steps */
+        /* .step:nth-child(1) { animation-delay: 0.1s; }
         .step:nth-child(2) { animation-delay: 0.2s; }
         .step:nth-child(3) { animation-delay: 0.3s; }
-        .step:nth-child(4) { animation-delay: 0.4s; }
+        .step:nth-child(4) { animation-delay: 0.4s; } */
 
         .step-number {
             font-size: 4rem;
@@ -637,23 +625,10 @@
                 grid-template-columns: 1fr;
             }
         }
-
-        /* Scroll animations */
-        .scroll-reveal {
-            opacity: 0;
-            transform: translateY(50px);
-            transition: all 0.6s ease-out;
-        }
-
-        .scroll-reveal.active {
-            opacity: 1;
-            transform: translateY(0);
-        }
     </style>
 </head>
 <body>
 
-    <!-- Header -->
     <header>
         <nav>
             <div class="nav-container">
@@ -667,7 +642,6 @@
         </nav>
     </header>
 
-    <!-- Hero Section -->
     <section class="hero" id="play">
         <div class="hero-container">
             <h1 class="hero-title">
@@ -676,38 +650,37 @@
                 UNBLOCKED
             </h1>
             <p class="hero-subtitle">Unlimited Free Word Game • Play Anytime, Anywhere</p>
-            
+
             <div class="game-container">
                 <iframe src="https://wordlegame.org/" title="Wordle Unblocked Game" allowfullscreen></iframe>
             </div>
         </div>
     </section>
 
-    <!-- Features Section -->
     <section class="features">
         <div class="features-container">
-            <h2 class="section-title scroll-reveal">WHY CHOOSE WORDLE UNBLOCKED?</h2>
-            
+            <h2 class="section-title">WHY CHOOSE WORDLE UNBLOCKED?</h2>
+
             <div class="features-grid">
-                <div class="feature-card scroll-reveal">
+                <div class="feature-card">
                     <div class="feature-icon">∞</div>
                     <h3 class="feature-title">Unlimited Games</h3>
                     <p class="feature-description">Play as many times as you want! No daily limits or restrictions. Start a new game whenever you're ready for another challenge.</p>
                 </div>
 
-                <div class="feature-card scroll-reveal">
+                <div class="feature-card">
                     <div class="feature-icon">🚀</div>
                     <h3 class="feature-title">100% Free</h3>
                     <p class="feature-description">Completely free to play. No subscriptions, no hidden fees, no paywalls. Just pure word-guessing fun for everyone.</p>
                 </div>
 
-                <div class="feature-card scroll-reveal">
+                <div class="feature-card">
                     <div class="feature-icon">🔓</div>
                     <h3 class="feature-title">Always Accessible</h3>
                     <p class="feature-description">Access Wordle from anywhere, anytime. No blocking, no restrictions. Play at school, work, or home without limitations.</p>
                 </div>
 
-                <div class="feature-card scroll-reveal">
+                <div class="feature-card">
                     <div class="feature-icon">⚡</div>
                     <h3 class="feature-title">Instant Play</h3>
                     <p class="feature-description">No downloads, no installations, no sign-ups required. Click and play instantly in your browser. Simple and straightforward.</p>
@@ -716,11 +689,10 @@
         </div>
     </section>
 
-    <!-- How to Play Section -->
     <section class="how-to-play" id="how-to">
         <div class="how-to-play-container">
             <h2 class="section-title">HOW TO PLAY</h2>
-            
+
             <div class="steps-container">
                 <div class="step">
                     <div class="step-number">1</div>
@@ -749,38 +721,37 @@
         </div>
     </section>
 
-    <!-- Why Play Section -->
     <section class="why-play">
         <div class="why-play-container">
-            <h2 class="section-title scroll-reveal">BENEFITS OF WORDLE</h2>
-            
+            <h2 class="section-title">BENEFITS OF WORDLE</h2>
+
             <div class="benefits-grid">
-                <div class="benefit scroll-reveal">
+                <div class="benefit">
                     <h3 class="benefit-title">🧠 Brain Training</h3>
                     <p class="benefit-text">Exercise your mind daily with vocabulary challenges that improve cognitive function.</p>
                 </div>
 
-                <div class="benefit scroll-reveal">
+                <div class="benefit">
                     <h3 class="benefit-title">📚 Expand Vocabulary</h3>
                     <p class="benefit-text">Learn new words and strengthen your language skills with every game you play.</p>
                 </div>
 
-                <div class="benefit scroll-reveal">
+                <div class="benefit">
                     <h3 class="benefit-title">⏰ Quick Games</h3>
                     <p class="benefit-text">Perfect for short breaks. Each game takes just a few minutes to complete.</p>
                 </div>
 
-                <div class="benefit scroll-reveal">
+                <div class="benefit">
                     <h3 class="benefit-title">🎯 Improve Focus</h3>
                     <p class="benefit-text">Enhance concentration and problem-solving skills through strategic thinking.</p>
                 </div>
 
-                <div class="benefit scroll-reveal">
+                <div class="benefit">
                     <h3 class="benefit-title">😊 Stress Relief</h3>
                     <p class="benefit-text">Enjoy a relaxing mental break that's both fun and rewarding.</p>
                 </div>
 
-                <div class="benefit scroll-reveal">
+                <div class="benefit">
                     <h3 class="benefit-title">🌍 Play Anywhere</h3>
                     <p class="benefit-text">Mobile-friendly design lets you play on any device, wherever you are.</p>
                 </div>
@@ -788,47 +759,46 @@
         </div>
     </section>
 
-    <!-- FAQ Section -->
     <section class="faq" id="faq">
         <div class="faq-container">
             <h2 class="section-title">FREQUENTLY ASKED QUESTIONS</h2>
-            
-            <div class="faq-item scroll-reveal">
+
+            <div class="faq-item">
                 <div class="faq-question">What is Wordle Unblocked?</div>
                 <div class="faq-answer">
                     Wordle Unblocked is an unlimited version of the popular word puzzle game. Unlike the original, you can play as many games as you want without waiting for the next day. It's completely free and accessible from anywhere without restrictions.
                 </div>
             </div>
 
-            <div class="faq-item scroll-reveal">
+            <div class="faq-item">
                 <div class="faq-question">Is Wordle Unblocked really free?</div>
                 <div class="faq-answer">
                     Yes! Wordle Unblocked is 100% free to play. There are no hidden costs, subscriptions, or premium features. Everyone gets full access to unlimited games without any payment required.
                 </div>
             </div>
 
-            <div class="faq-item scroll-reveal">
+            <div class="faq-item">
                 <div class="faq-question">How many times can I play?</div>
                 <div class="faq-answer">
                     You can play unlimited times! There's no daily limit or restriction. Start a new game immediately after finishing one, or play dozens of games in a single session. The choice is yours.
                 </div>
             </div>
 
-            <div class="faq-item scroll-reveal">
+            <div class="faq-item">
                 <div class="faq-question">Do I need to download anything?</div>
                 <div class="faq-answer">
                     No downloads or installations needed! Wordle Unblocked runs directly in your web browser. Just visit the site and start playing instantly. Works on desktop, tablet, and mobile devices.
                 </div>
             </div>
 
-            <div class="faq-item scroll-reveal">
+            <div class="faq-item">
                 <div class="faq-question">Can I play on my phone?</div>
                 <div class="faq-answer">
                     Wordle Unblocked is fully optimized for mobile devices. Play on your smartphone or tablet with the same great experience as desktop. Works on iOS and Android.
                 </div>
             </div>
 
-            <div class="faq-item scroll-reveal">
+            <div class="faq-item">
                 <div class="faq-question">What makes this version "unblocked"?</div>
                 <div class="faq-answer">
                     "Unblocked" means you can access and play the game from anywhere, including schools, offices, or networks that might restrict gaming sites. Plus, there's no time-based restrictions on gameplay.
@@ -837,7 +807,6 @@
         </div>
     </section>
 
-    <!-- Footer -->
     <footer>
         <div class="footer-container">
             <div class="footer-widget">
@@ -879,13 +848,13 @@
             question.addEventListener('click', () => {
                 const answer = question.nextElementSibling;
                 const isActive = question.classList.contains('active');
-                
+
                 // Close all FAQs
                 document.querySelectorAll('.faq-question').forEach(q => {
                     q.classList.remove('active');
                     q.nextElementSibling.classList.remove('active');
                 });
-                
+
                 // Open clicked FAQ if it wasn't active
                 if (!isActive) {
                     question.classList.add('active');
@@ -893,25 +862,6 @@
                 }
             });
         });
-
-        // Scroll Reveal Animation
-        const revealElements = document.querySelectorAll('.scroll-reveal');
-        
-        const revealOnScroll = () => {
-            const windowHeight = window.innerHeight;
-            
-            revealElements.forEach(element => {
-                const elementTop = element.getBoundingClientRect().top;
-                const revealPoint = 100;
-                
-                if (elementTop < windowHeight - revealPoint) {
-                    element.classList.add('active');
-                }
-            });
-        };
-
-        window.addEventListener('scroll', revealOnScroll);
-        revealOnScroll(); // Initial check
 
         // Smooth Scroll for Navigation
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -927,7 +877,8 @@
             });
         });
 
-        // Add parallax effect to hero
+        // **MODIFIED:** Removed Parallax/Scroll-Reveal Code
+        /*
         window.addEventListener('scroll', () => {
             const scrolled = window.pageYOffset;
             const hero = document.querySelector('.hero');
@@ -935,6 +886,7 @@
                 hero.style.transform = `translateY(${scrolled * 0.5}px)`;
             }
         });
+        */
     </script>
 
 </body>
