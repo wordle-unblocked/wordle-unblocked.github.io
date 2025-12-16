@@ -1,0 +1,935 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Play Wordle Unblocked - The unlimited free word puzzle game. No limits, play anytime, anywhere. Test your vocabulary with this addictive daily word challenge.">
+    <meta name="keywords" content="wordle unblocked, free wordle, unlimited wordle, word game, puzzle game, vocabulary game">
+    <meta name="author" content="Wordle Unblocked">
+    <meta property="og:title" content="Wordle Unblocked - Unlimited Free Word Game">
+    <meta property="og:description" content="Play Wordle Unblocked - The unlimited free word puzzle game. No limits, play anytime, anywhere.">
+    <meta property="og:url" content="https://wordle-unblocked.github.io/">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://wordle-unblocked.github.io/og-image.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Wordle Unblocked - Unlimited Free Word Game">
+    <meta name="twitter:description" content="Play Wordle Unblocked - The unlimited free word puzzle game. No limits, play anytime, anywhere.">
+    <link rel="canonical" href="https://wordle-unblocked.github.io/">
+    <title>Wordle Unblocked - Unlimited Free Word Game</title>
+    
+    <!-- Schema.org markup -->
+    <script type="application/ld+json">
+    {
+  "@context": "https://schema.org",
+  "@type": "VideoGame",
+  "name": "Wordle Unblocked",
+  "alternateName": "Wordle Unlimited Free",
+  "description": "Play Wordle unblocked for free & Unlimited without any restrictions. Guess the 5-letter word in 6 tries with daily puzzles and unlimited gameplay.",
+  "url": "https://wordle-unblocked.github.io/",
+  "applicationCategory": "PuzzleGame",
+  "gamePlatform": "Web Browser",
+  "genre": [
+    "Word Game",
+    "Puzzle",
+    "Educational",
+    "Brain Game"
+  ],
+  "keywords": "wordle unblocked, wordle free, word puzzle, word game, vocabulary, 5 letter word, daily puzzle, brain teaser",
+  "operatingSystem": "Web",
+  "author": {
+    "@type": "Organization",
+    "name": "Wordle Unblocked"
+  },
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD",
+    "availability": "https://schema.org/InStock"
+  },
+  "playMode": "SinglePlayer",
+  "gameLocation": "Online",
+  "audience": {
+    "@type": "PeopleAudience",
+    "suggestedMinAge": "8",
+    "suggestedMaxAge": "99"
+  },
+  "softwareRequirements": "Web browser with JavaScript enabled",
+  "educationalUse": "Vocabulary building, spelling practice, cognitive training",
+  "learningResourceType": "Game",
+  "typicalAgeRange": "8-99",
+  "timeRequired": "PT3M",
+  "interactivityType": "active",
+  "isAccessibleForFree": true,
+  "featureList": [
+    "Unlimited Wordle puzzles",
+    "No restrictions or blocks",
+    "Daily challenge mode",
+    "Color-coded feedback system",
+    "Statistics tracking",
+    "Mobile-friendly design"
+  ]
+}
+    </script>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --cream: #FAF7F0;
+            --black: #1a1a1a;
+            --green: #6AAA64;
+            --yellow: #F4B400;
+            --blue: #4169E1;
+            --coral: #FF6B6B;
+            --pink: #FF69B4;
+        }
+
+        body {
+            font-family: 'Arial Black', 'Arial Bold', Gadget, sans-serif;
+            background-color: var(--cream);
+            color: var(--black);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Navigation */
+        nav {
+            background: var(--cream);
+            border-bottom: 6px solid var(--black);
+            padding: 1.5rem 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 8px 8px 0px rgba(0,0,0,0.2);
+        }
+
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 2rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: -2px;
+            background: linear-gradient(45deg, var(--green), var(--yellow), var(--blue));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: slideInLeft 0.8s ease-out;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--black);
+            text-decoration: none;
+            font-weight: 900;
+            font-size: 1.1rem;
+            padding: 0.5rem 1.5rem;
+            border: 4px solid var(--black);
+            background: var(--yellow);
+            text-transform: uppercase;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            transform: translate(-4px, -4px);
+            box-shadow: 6px 6px 0px var(--black);
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 4rem 2rem;
+            background: var(--cream);
+            border-bottom: 8px solid var(--black);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .hero-title {
+            font-size: clamp(3rem, 8vw, 7rem);
+            font-weight: 900;
+            text-transform: uppercase;
+            line-height: 0.9;
+            margin-bottom: 2rem;
+            letter-spacing: -4px;
+            animation: slideInUp 1s ease-out;
+        }
+
+        .hero-title span {
+            display: inline-block;
+        }
+
+        .hero-title .word-w { color: var(--green); animation: bounce 2s infinite 0.1s; }
+        .hero-title .word-o { color: var(--yellow); animation: bounce 2s infinite 0.2s; }
+        .hero-title .word-r { color: var(--coral); animation: bounce 2s infinite 0.3s; }
+        .hero-title .word-d { color: var(--blue); animation: bounce 2s infinite 0.4s; }
+        .hero-title .word-l { color: var(--pink); animation: bounce 2s infinite 0.5s; }
+        .hero-title .word-e { color: var(--green); animation: bounce 2s infinite 0.6s; }
+
+        .hero-subtitle {
+            font-size: 1.5rem;
+            margin-bottom: 3rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            animation: slideInUp 1s ease-out 0.2s backwards;
+        }
+
+        .game-container {
+            border: 8px solid var(--black);
+            background: white;
+            box-shadow: 12px 12px 0px rgba(0,0,0,0.3);
+            animation: slideInUp 1s ease-out 0.4s backwards;
+            position: relative;
+        }
+
+        .game-container::before {
+            content: '';
+            position: absolute;
+            top: -8px;
+            left: -8px;
+            right: -8px;
+            bottom: -8px;
+            background: linear-gradient(45deg, var(--green), var(--yellow), var(--blue), var(--coral));
+            z-index: -1;
+            animation: rotateGradient 8s linear infinite;
+        }
+
+        .game-container iframe {
+            width: 100%;
+            height: 600px;
+            border: none;
+            display: block;
+        }
+
+        /* Feature Section */
+        .features {
+            padding: 6rem 2rem;
+            background: var(--cream);
+        }
+
+        .features-container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-size: clamp(2.5rem, 6vw, 5rem);
+            font-weight: 900;
+            text-transform: uppercase;
+            margin-bottom: 3rem;
+            text-align: center;
+            letter-spacing: -3px;
+            position: relative;
+            display: inline-block;
+            width: 100%;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 200px;
+            height: 8px;
+            background: var(--green);
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+            margin-top: 4rem;
+        }
+
+        .feature-card {
+            background: white;
+            border: 6px solid var(--black);
+            padding: 2.5rem;
+            box-shadow: 8px 8px 0px rgba(0,0,0,0.2);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 8px;
+            background: var(--green);
+            transform: translateX(-100%);
+            transition: transform 0.3s ease;
+        }
+
+        .feature-card:hover::before {
+            transform: translateX(0);
+        }
+
+        .feature-card:nth-child(2)::before { background: var(--yellow); }
+        .feature-card:nth-child(3)::before { background: var(--blue); }
+        .feature-card:nth-child(4)::before { background: var(--coral); }
+
+        .feature-card:hover {
+            transform: translate(-4px, -4px);
+            box-shadow: 12px 12px 0px rgba(0,0,0,0.3);
+        }
+
+        .feature-icon {
+            font-size: 4rem;
+            margin-bottom: 1.5rem;
+            font-weight: 900;
+        }
+
+        .feature-card:nth-child(1) .feature-icon { color: var(--green); }
+        .feature-card:nth-child(2) .feature-icon { color: var(--yellow); }
+        .feature-card:nth-child(3) .feature-icon { color: var(--blue); }
+        .feature-card:nth-child(4) .feature-icon { color: var(--coral); }
+
+        .feature-title {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            font-weight: 900;
+        }
+
+        .feature-description {
+            font-family: Arial, sans-serif;
+            font-size: 1.1rem;
+            line-height: 1.6;
+            font-weight: 600;
+        }
+
+        /* How to Play Section */
+        .how-to-play {
+            padding: 6rem 2rem;
+            background: var(--green);
+            border-top: 8px solid var(--black);
+            border-bottom: 8px solid var(--black);
+        }
+
+        .how-to-play .section-title {
+            color: white;
+        }
+
+        .how-to-play .section-title::after {
+            background: var(--yellow);
+        }
+
+        .steps-container {
+            max-width: 1400px;
+            margin: 4rem auto 0;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .step {
+            background: white;
+            border: 6px solid var(--black);
+            padding: 2rem;
+            text-align: center;
+            box-shadow: 8px 8px 0px rgba(0,0,0,0.4);
+            animation: slideInUp 0.6s ease-out backwards;
+        }
+
+        .step:nth-child(1) { animation-delay: 0.1s; }
+        .step:nth-child(2) { animation-delay: 0.2s; }
+        .step:nth-child(3) { animation-delay: 0.3s; }
+        .step:nth-child(4) { animation-delay: 0.4s; }
+
+        .step-number {
+            font-size: 4rem;
+            font-weight: 900;
+            color: var(--green);
+            margin-bottom: 1rem;
+        }
+
+        .step-title {
+            font-size: 1.5rem;
+            font-weight: 900;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+        }
+
+        .step-description {
+            font-family: Arial, sans-serif;
+            font-size: 1rem;
+            font-weight: 600;
+        }
+
+        /* Why Play Section */
+        .why-play {
+            padding: 6rem 2rem;
+            background: var(--cream);
+        }
+
+        .why-play-container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 4rem;
+        }
+
+        .benefit {
+            background: var(--yellow);
+            border: 6px solid var(--black);
+            padding: 2rem;
+            box-shadow: 8px 8px 0px rgba(0,0,0,0.2);
+            transition: all 0.3s ease;
+        }
+
+        .benefit:nth-child(2) { background: var(--blue); color: white; }
+        .benefit:nth-child(3) { background: var(--coral); color: white; }
+        .benefit:nth-child(4) { background: var(--pink); color: white; }
+        .benefit:nth-child(5) { background: var(--green); color: white; }
+        .benefit:nth-child(6) { background: var(--yellow); }
+
+        .benefit:hover {
+            transform: rotate(-2deg) scale(1.05);
+        }
+
+        .benefit-title {
+            font-size: 1.5rem;
+            font-weight: 900;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+        }
+
+        .benefit-text {
+            font-family: Arial, sans-serif;
+            font-size: 1rem;
+            font-weight: 600;
+        }
+
+        /* FAQ Section */
+        .faq {
+            padding: 6rem 2rem;
+            background: var(--blue);
+            border-top: 8px solid var(--black);
+        }
+
+        .faq .section-title {
+            color: white;
+        }
+
+        .faq .section-title::after {
+            background: var(--yellow);
+        }
+
+        .faq-container {
+            max-width: 1000px;
+            margin: 4rem auto 0;
+        }
+
+        .faq-item {
+            background: white;
+            border: 6px solid var(--black);
+            margin-bottom: 1.5rem;
+            overflow: hidden;
+            box-shadow: 6px 6px 0px rgba(0,0,0,0.4);
+        }
+
+        .faq-question {
+            background: var(--yellow);
+            padding: 1.5rem;
+            font-size: 1.3rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.3s ease;
+            border-bottom: 6px solid var(--black);
+        }
+
+        .faq-question:hover {
+            background: var(--green);
+            color: white;
+        }
+
+        .faq-question::after {
+            content: '+';
+            font-size: 2rem;
+            font-weight: 900;
+            transition: transform 0.3s ease;
+        }
+
+        .faq-question.active::after {
+            transform: rotate(45deg);
+        }
+
+        .faq-answer {
+            padding: 0 1.5rem;
+            max-height: 0;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            font-family: Arial, sans-serif;
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+
+        .faq-answer.active {
+            padding: 1.5rem;
+            max-height: 500px;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--black);
+            color: white;
+            padding: 4rem 2rem 2rem;
+            border-top: 8px solid var(--green);
+        }
+
+        .footer-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-widget h3 {
+            font-size: 1.8rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            margin-bottom: 1.5rem;
+            color: var(--yellow);
+        }
+
+        .footer-widget p {
+            font-family: Arial, sans-serif;
+            font-size: 1rem;
+            line-height: 1.8;
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.8rem;
+        }
+
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+            font-family: Arial, sans-serif;
+            font-size: 1.1rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            transition: all 0.3s ease;
+            display: inline-block;
+            padding: 0.5rem 0;
+        }
+
+        .footer-links a:hover {
+            color: var(--green);
+            transform: translateX(10px);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 4px solid var(--green);
+            font-family: Arial, sans-serif;
+            font-weight: 900;
+        }
+
+        /* Animations */
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes slideInUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        @keyframes rotateGradient {
+            0% { transform: rotate(0deg) scale(1.1); }
+            100% { transform: rotate(360deg) scale(1.1); }
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                gap: 0.5rem;
+            }
+
+            .nav-links a {
+                padding: 0.4rem 0.8rem;
+                font-size: 0.9rem;
+            }
+
+            .hero-title {
+                font-size: 3rem;
+            }
+
+            .section-title {
+                font-size: 2.5rem;
+            }
+
+            .game-container iframe {
+                height: 400px;
+            }
+
+            .footer-container {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Scroll animations */
+        .scroll-reveal {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.6s ease-out;
+        }
+
+        .scroll-reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <div class="logo">WORDLE</div>
+            <ul class="nav-links">
+                <li><a href="#play">Play</a></li>
+                <li><a href="#how-to">How To</a></li>
+                <li><a href="#faq">FAQ</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="play">
+        <div class="hero-container">
+            <h1 class="hero-title">
+                <span class="word-w">W</span><span class="word-o">O</span><span class="word-r">R</span><span class="word-d">D</span><span class="word-l">L</span><span class="word-e">E</span>
+                <br>
+                UNBLOCKED
+            </h1>
+            <p class="hero-subtitle">Unlimited Free Word Game • Play Anytime, Anywhere</p>
+            
+            <div class="game-container">
+                <iframe src="https://wordlegame.org/" title="Wordle Unblocked Game" allowfullscreen></iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+        <div class="features-container">
+            <h2 class="section-title scroll-reveal">WHY CHOOSE WORDLE UNBLOCKED?</h2>
+            
+            <div class="features-grid">
+                <div class="feature-card scroll-reveal">
+                    <div class="feature-icon">∞</div>
+                    <h3 class="feature-title">Unlimited Games</h3>
+                    <p class="feature-description">Play as many times as you want! No daily limits or restrictions. Start a new game whenever you're ready for another challenge.</p>
+                </div>
+
+                <div class="feature-card scroll-reveal">
+                    <div class="feature-icon">🚀</div>
+                    <h3 class="feature-title">100% Free</h3>
+                    <p class="feature-description">Completely free to play. No subscriptions, no hidden fees, no paywalls. Just pure word-guessing fun for everyone.</p>
+                </div>
+
+                <div class="feature-card scroll-reveal">
+                    <div class="feature-icon">🔓</div>
+                    <h3 class="feature-title">Always Accessible</h3>
+                    <p class="feature-description">Access Wordle from anywhere, anytime. No blocking, no restrictions. Play at school, work, or home without limitations.</p>
+                </div>
+
+                <div class="feature-card scroll-reveal">
+                    <div class="feature-icon">⚡</div>
+                    <h3 class="feature-title">Instant Play</h3>
+                    <p class="feature-description">No downloads, no installations, no sign-ups required. Click and play instantly in your browser. Simple and straightforward.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How to Play Section -->
+    <section class="how-to-play" id="how-to">
+        <div class="how-to-play-container">
+            <h2 class="section-title">HOW TO PLAY</h2>
+            
+            <div class="steps-container">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h3 class="step-title">Guess the Word</h3>
+                    <p class="step-description">Enter a 5-letter word to begin. You have 6 attempts to guess the mystery word.</p>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h3 class="step-title">Check Colors</h3>
+                    <p class="step-description">Green means correct letter in correct spot. Yellow means correct letter, wrong spot.</p>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h3 class="step-title">Make Progress</h3>
+                    <p class="step-description">Use the color clues to narrow down possibilities and make smarter guesses.</p>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <h3 class="step-title">Win & Repeat</h3>
+                    <p class="step-description">Solve the puzzle and start a new game immediately. Unlimited fun awaits!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Play Section -->
+    <section class="why-play">
+        <div class="why-play-container">
+            <h2 class="section-title scroll-reveal">BENEFITS OF WORDLE</h2>
+            
+            <div class="benefits-grid">
+                <div class="benefit scroll-reveal">
+                    <h3 class="benefit-title">🧠 Brain Training</h3>
+                    <p class="benefit-text">Exercise your mind daily with vocabulary challenges that improve cognitive function.</p>
+                </div>
+
+                <div class="benefit scroll-reveal">
+                    <h3 class="benefit-title">📚 Expand Vocabulary</h3>
+                    <p class="benefit-text">Learn new words and strengthen your language skills with every game you play.</p>
+                </div>
+
+                <div class="benefit scroll-reveal">
+                    <h3 class="benefit-title">⏰ Quick Games</h3>
+                    <p class="benefit-text">Perfect for short breaks. Each game takes just a few minutes to complete.</p>
+                </div>
+
+                <div class="benefit scroll-reveal">
+                    <h3 class="benefit-title">🎯 Improve Focus</h3>
+                    <p class="benefit-text">Enhance concentration and problem-solving skills through strategic thinking.</p>
+                </div>
+
+                <div class="benefit scroll-reveal">
+                    <h3 class="benefit-title">😊 Stress Relief</h3>
+                    <p class="benefit-text">Enjoy a relaxing mental break that's both fun and rewarding.</p>
+                </div>
+
+                <div class="benefit scroll-reveal">
+                    <h3 class="benefit-title">🌍 Play Anywhere</h3>
+                    <p class="benefit-text">Mobile-friendly design lets you play on any device, wherever you are.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq" id="faq">
+        <div class="faq-container">
+            <h2 class="section-title">FREQUENTLY ASKED QUESTIONS</h2>
+            
+            <div class="faq-item scroll-reveal">
+                <div class="faq-question">What is Wordle Unblocked?</div>
+                <div class="faq-answer">
+                    Wordle Unblocked is an unlimited version of the popular word puzzle game. Unlike the original, you can play as many games as you want without waiting for the next day. It's completely free and accessible from anywhere without restrictions.
+                </div>
+            </div>
+
+            <div class="faq-item scroll-reveal">
+                <div class="faq-question">Is Wordle Unblocked really free?</div>
+                <div class="faq-answer">
+                    Yes! Wordle Unblocked is 100% free to play. There are no hidden costs, subscriptions, or premium features. Everyone gets full access to unlimited games without any payment required.
+                </div>
+            </div>
+
+            <div class="faq-item scroll-reveal">
+                <div class="faq-question">How many times can I play?</div>
+                <div class="faq-answer">
+                    You can play unlimited times! There's no daily limit or restriction. Start a new game immediately after finishing one, or play dozens of games in a single session. The choice is yours.
+                </div>
+            </div>
+
+            <div class="faq-item scroll-reveal">
+                <div class="faq-question">Do I need to download anything?</div>
+                <div class="faq-answer">
+                    No downloads or installations needed! Wordle Unblocked runs directly in your web browser. Just visit the site and start playing instantly. Works on desktop, tablet, and mobile devices.
+                </div>
+            </div>
+
+            <div class="faq-item scroll-reveal">
+                <div class="faq-question">Can I play on my phone?</div>
+                <div class="faq-answer">
+                    Wordle Unblocked is fully optimized for mobile devices. Play on your smartphone or tablet with the same great experience as desktop. Works on iOS and Android.
+                </div>
+            </div>
+
+            <div class="faq-item scroll-reveal">
+                <div class="faq-question">What makes this version "unblocked"?</div>
+                <div class="faq-answer">
+                    "Unblocked" means you can access and play the game from anywhere, including schools, offices, or networks that might restrict gaming sites. Plus, there's no time-based restrictions on gameplay.
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-widget">
+                <h3>About Wordle Unblocked</h3>
+                <p>Wordle Unblocked brings unlimited word puzzle fun to everyone. Challenge yourself with unlimited games, improve your vocabulary, and enjoy the most popular word game without restrictions.</p>
+                <p>Play anytime, anywhere, completely free!</p>
+            </div>
+
+            <div class="footer-widget">
+                <h3>Quick Links</h3>
+                <ul class="footer-links">
+                    <li><a href="#play">Play Now</a></li>
+                    <li><a href="#how-to">How to Play</a></li>
+                    <li><a href="#faq">FAQ</a></li>
+                    <li><a href="#features">Features</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-widget">
+                <h3>Pages</h3>
+                <ul class="footer-links">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/about">About</a></li>
+                    <li><a href="/privacy">Privacy Policy</a></li>
+                    <li><a href="/terms">Terms of Service</a></li>
+                    <li><a href="/contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2025 Wordle Unblocked. All rights reserved. Play unlimited free word games anytime!</p>
+        </div>
+    </footer>
+
+    <script>
+        // FAQ Accordion
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const answer = question.nextElementSibling;
+                const isActive = question.classList.contains('active');
+                
+                // Close all FAQs
+                document.querySelectorAll('.faq-question').forEach(q => {
+                    q.classList.remove('active');
+                    q.nextElementSibling.classList.remove('active');
+                });
+                
+                // Open clicked FAQ if it wasn't active
+                if (!isActive) {
+                    question.classList.add('active');
+                    answer.classList.add('active');
+                }
+            });
+        });
+
+        // Scroll Reveal Animation
+        const revealElements = document.querySelectorAll('.scroll-reveal');
+        
+        const revealOnScroll = () => {
+            const windowHeight = window.innerHeight;
+            
+            revealElements.forEach(element => {
+                const elementTop = element.getBoundingClientRect().top;
+                const revealPoint = 100;
+                
+                if (elementTop < windowHeight - revealPoint) {
+                    element.classList.add('active');
+                }
+            });
+        };
+
+        window.addEventListener('scroll', revealOnScroll);
+        revealOnScroll(); // Initial check
+
+        // Smooth Scroll for Navigation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Add parallax effect to hero
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const hero = document.querySelector('.hero');
+            if (hero) {
+                hero.style.transform = `translateY(${scrolled * 0.5}px)`;
+            }
+        });
+    </script>
+
+</body>
+</html>
